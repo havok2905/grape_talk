@@ -1,0 +1,35 @@
+#%RAML 0.8
+---
+title: Beer API
+version: v1
+/beer/styles:
+  get:
+    description: 'return a list of beer styles'
+    responses:
+      200:
+        body:
+          application/json:
+            schema: |
+              {
+                "$schema": "http://json-schema.org/schema#",
+                "type" : "object",
+                "properties" : {
+                  "beer" : {
+                    "type" : "object",
+                    "properties" : {
+                      "more_beer" : {
+                        "type" : "array"
+                      },
+                      "yo" : {
+                        "type" : "string"
+                      }
+                    }
+                  }
+                }
+              }
+            example: |
+              [
+                "Beligian",
+                "Lager",
+                "Wiess"
+              ]

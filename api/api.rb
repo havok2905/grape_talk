@@ -1,3 +1,4 @@
+require 'pry'
 require 'grape'
 require './api/beer.rb'
 
@@ -6,7 +7,7 @@ module BeerAPI
     version 'v1', using: :path, vendor: 'beer'
     format :json
     prefix :api
-    
+
     resource :beer do
       desc 'return a list of beer styles'
       get :styles do
@@ -17,7 +18,7 @@ module BeerAPI
       get :names do
         Beer.names
       end
-      
+
       desc 'return all beers'
       get :beers do
         Beer.beers

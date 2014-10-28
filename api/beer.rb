@@ -1,10 +1,16 @@
 module BeerAPI
   class Beer
     class << self
-      attr_accessor :cellar      
+      attr_accessor :cellar
 
       def styles
-        @cellar.map{ |beer| beer[:style] }.uniq
+        beers = @cellar.map { |beer| beer[:style] }.uniq
+        {
+          beer: {
+            more_beer: beers,
+            yo: 'yo'
+          }
+        }
       end
 
       def names
@@ -12,11 +18,11 @@ module BeerAPI
       end
 
       def beers
-	@cellar
+        @cellar
       end
 
       def beer(id)
-	@cellar[id]
+        @cellar[id]
       end
     end
 
@@ -25,7 +31,6 @@ module BeerAPI
        { name: 'World Wide Stout', style: 'Imperial Stout' },
        { name: 'Jai Alai', style: 'IPA' },
        { name: 'Golden Monkey', style: 'Trippel' }
-      ]
-
+    ]
   end
 end
