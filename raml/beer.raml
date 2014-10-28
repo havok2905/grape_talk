@@ -9,27 +9,12 @@ version: v1
       200:
         body:
           application/json:
-            schema: |
-              {
-                "$schema": "http://json-schema.org/schema#",
-                "type" : "object",
-                "properties" : {
-                  "beer" : {
-                    "type" : "object",
-                    "properties" : {
-                      "more_beer" : {
-                        "type" : "array"
-                      },
-                      "yo" : {
-                        "type" : "string"
-                      }
-                    }
-                  }
-                }
-              }
+            schema: !include schemas/styles.schema
             example: |
-              [
-                "Beligian",
-                "Lager",
-                "Wiess"
-              ]
+              {
+                "beer" : [
+                  "Beligian",
+                  "Lager",
+                  "Wiess"
+                ]
+              }

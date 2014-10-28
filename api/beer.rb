@@ -6,10 +6,7 @@ module BeerAPI
       def styles
         beers = @cellar.map { |beer| beer[:style] }.uniq
         {
-          beer: {
-            more_beer: beers,
-            yo: 'yo'
-          }
+          beer: beers
         }
       end
 
