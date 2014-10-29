@@ -4,4 +4,5 @@ before 'GET /beer/styles -> 200', (test, done) ->
   done()
 
 after 'GET /beer/styles -> 200', (test, done) ->
+  console.log test.response
   done()
