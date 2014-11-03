@@ -3,7 +3,7 @@
   "type" : "object",
   "properties" : {
     "beer" : {
-      "type" : "object"
+      "type" : "array"
     }
   }
 }
